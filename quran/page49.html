@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surah Al-Hujurat</title>
+    <link rel="stylesheet" href="./surah.css">
+</head>
+<body>
+    <div class="surah_heading">
+        <h1>Surah Al-Hujurat</h1>
+    </div>
+    <span class="span">
+        <img  style="height: 80px; background: white; margin-left: 10px; margin-top: 20px;  width: 100%;" src="../bismi.svg" alt="bismi.svg">
+    </span>
+    <div id="surah-container" class="notranslate"></div>
+
+    <script>
+        // Arabic numeral mapping
+        const arabicNumerals = {
+            '0': '٠',
+            '1': '١',
+            '2': '٢',
+            '3': '٣',
+            '4': '٤',
+            '5': '٥',
+            '6': '٦',
+            '7': '٧',
+            '8': '٨',
+            '9': '٩'
+        };
+
+        // Fetch Surah Al-Hujurat from the API
+        fetch('https://api.alquran.cloud/v1/surah/49')
+            .then(response => response.json())
+            .then(data => {
+                // Get the text of Surah Al-Hujurat
+                const surahAlHujurat = data.data.ayahs;
+
+                // Create a container element for the surah text
+                const surahContainer = document.getElementById('surah-container');
+
+                // Create a span element for each verse
+                surahAlHujurat.forEach((verse, index) => {
+                    const verseElement = document.createElement('span');
+                    verseElement.textContent = verse.text;
+
+                    // Create a span element for the ayah number
+                    const ayahNumber = document.createElement('span');
+                    const arabicNumber = verse.numberInSurah.toString().replace(/[0-9]/g, digit => arabicNumerals[digit]);
+                    ayahNumber.textContent = arabicNumber;
+                    ayahNumber.classList.add('ayah-number');
+
+                    verseElement.appendChild(ayahNumber);
+                    surahContainer.appendChild(verseElement);
+                });
+            })
+            .catch(error => {
+                console.log('An error occurred:', error);
+            });
+    </script>
+</body>
+</html>

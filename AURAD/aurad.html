@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>aurad</title>
+</head>
+<body>
+    <header>
+            <h1 class="hero-title">AURAD</h1>
+    </header>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search Surah...">
+    </div>
+    <main class="grid-container">
+      <section class="section-box">
+        <a href="/AURAD/asmaul badr.pdf" target="_blank">
+          <div class="section-content">
+            <h2 class="section-title">asmaul  badr</h2>
+          </div>
+        </a>
+      </section>
+      <section class="section-box">
+        <a href="/AURAD/badriyyath.pdf" target="_blank">
+          <div class="section-content">
+            <h2 class="section-title">badriyyath</h2>
+          </div>
+        </a>
+      </section>
+      <section class="section-box">
+        <a href="/AURAD/MHLARATHUL.pdf" target="_blank">
+          <div class="section-content">
+            <h2 class="section-title">MAHLARATHUL BADRIYA</h2>
+          </div>
+        </a>
+      </section>
+      <section class="section-box">
+        <a href="/AURAD/HADDAD.pdf" target="_blank">
+          <div class="section-content">
+            <h2 class="section-title">HADDDAAD</h2>
+          </div>
+        </a>
+      </section>
+      <section class="section-box">
+        <a href="/AURAD/HIZBAHR.pdf" target="_blank">
+          <div class="section-content">
+            <h2 class="section-title">HIZB AL BAHR</h2>
+          </div>
+        </a>
+      </section>
+        <section class="section-box">
+            <a href="/AURAD/HIZBNASR.pdf" target="_blank">
+              <div class="section-content">
+                <h2 class="section-title">HIZB AL NASR</h2>
+              </div>
+            </a>
+          </section>
+          <section class="section-box">
+            <a href="/AURAD/KANZILARSH.pdf" target="_blank">
+              <div class="section-content">
+                <h2 class="section-title">KANZIL ARSH</h2>
+              </div>
+            </a>
+          </section>
+          <section class="section-box">
+            <a href="/AURAD/VIRD BIG.pdf" target="_blank">
+              <div class="section-content">
+                <h2 class="section-title">VIDU LATHEEF(BIG)</h2>
+              </div>
+            </a>
+          </section>
+          <section class="section-box">
+            <a href="/AURAD/VIDU SMALL.pdf" target="_blank">
+              <div class="section-content">
+                <h2 class="section-title">VIRDU LATHEEF (SMALL)</h2>
+              </div>
+            </a>
+          </section>
+          <section class="section-box">
+            <a href="/AURAD/VIDU AL NAWAWI.pdf" target="_blank">
+              <div class="section-content">
+                <h2 class="section-title">VIRDU AL NAWAWI</h2>
+              </div>
+            </a>
+          </section>
+      </main>
+      <script>
+        const searchBar = document.getElementById("search-input");
+  const placeholders = ["Search eg: asmaul husna", "Search eg: virdullathef", "Search eg: hizb annasr", "Search eg:hizb albahr", "Search eg:Kanzil arsh"];
+  let i = 0;
+
+  setInterval(() => {
+    searchBar.setAttribute("placeholder", placeholders[i]);
+    i = (i + 1) % placeholders.length;
+  }, 2000)
+
+
+
+  const searchInput = document.getElementById('search-input');
+  const sectionBoxes = document.getElementsByClassName('section-box');
+
+  function isSimilarMatch(query, sectionTitle) {
+    const regex = new RegExp(query, 'i');
+    return regex.test(sectionTitle);
+  }
+
+  searchInput.addEventListener('input', () => {
+    const searchQuery = searchInput.value.trim();
+
+    Array.from(sectionBoxes).forEach((section) => {
+      const sectionTitle = section.querySelector('.section-title').textContent;
+
+      if (isSimilarMatch(searchQuery, sectionTitle)) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
+    });
+  });
+      </script>
+      
+      
+</body>
+</html>

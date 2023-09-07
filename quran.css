@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
+
+* {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+  width: 0px;
+}
+@font-face {
+  font-family: surahnames;
+  src: url("./sura_names.woff2");
+}
+
+@font-face {
+  font-family: p001;
+  src: url("./fonts/QCF_P001.TTF");
+}
+
+@font-face {
+  font-family: p002;
+  src: url("./fonts/QCF_P002.TTF");
+}
+
+@font-face {
+  font-family: p003;
+  src: url("./fonts/QCF_P003.TTF");
+}
+@font-face {
+  font-family: p004;
+  src: url("./fonts/QCF_P004.TTF");
+}
+@font-face {
+  font-family: p005;
+  src: url("./fonts/QCF_P005.TTF");
+}
+@font-face {
+  font-family: p006;
+  src: url("./fonts/QCF_P006.TTF");
+}
+@font-face {
+  font-family: p007;
+  src: url("./fonts/QCF_P007.TTF");
+}
+@font-face {
+  font-family: p008;
+  src: url("./fonts/QCF_P008.TTF");
+}
+@font-face {
+  font-family: p009;
+  src: url("./fonts/QCF_P009.TTF");
+}
+@font-face {
+  font-family: p0010;
+  src: url("./fonts/QCF_P010.TTF");
+}
+@font-face {
+  font-family: p0011;
+  src: url("./fonts/QCF_P011.TTF");
+}
+@font-face {
+  font-family: p0012;
+  src: url("./fonts/QCF_P012.TTF");
+}
+@font-face {
+  font-family: p0013;
+  src: url("./fonts/QCF_P013.TTF");
+}
+@font-face {
+  font-family: p0014;
+  src: url("./fonts/QCF_P014.TTF");
+}
+@font-face {
+  font-family: p0015;
+  src: url("./fonts/QCF_P015.TTF");
+}
+@font-face {
+  font-family: p0016;
+  src: url("./fonts/QCF_P016.TTF");
+}
+
+body {
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+#ayas{
+  display: flex;
+  text-align:justify;
+  font-size: 54px;
+  padding: 0px 40px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.span {
+  font-family: p001;
+}
+
+.page2 {
+  font-family: p002;
+}
+
+.page3 {
+  font-family: p003;
+}
+.page4 {
+  font-family: p004;
+}
+.page5 {
+  font-family: p005;
+}
+.page6 {
+  font-family: p006;
+}
+.page7 {
+  font-family: p007;
+}
+.page8 {
+  font-family: p008;
+}
+.page9 {
+  font-family: p009;
+}
+.page10 {
+  font-family: p0010;
+}
+.page11 {
+  font-family: p0011;
+}
+.page12 {
+  font-family: p0012;
+}
+.page13 {
+  font-family: p0013;
+}
+.page14 {
+  font-family: p0014;
+}
+.page15 {
+  font-family: p0015;
+}
+.page16 {
+  font-family: p0016;
+}
+
+.qq {
+  background: rgb(4, 65, 47);
+}
+.surah{
+  font-family: surahnames;
+  display: flex;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.yaseen {
+  border-radius: 5px;
+  height: 70px;
+  background: white;
+  text-align: center;
+  padding-top: 13px;
+  border: 1px solid rgb(134, 134, 134);
+  margin: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(4, 65, 47);
+
+}
+
+.search-bar {
+  border: 2px solid rgba(21, 151, 151, 0.281);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  background-color: white;
+  margin-left: 30%;
+  margin-bottom: 30px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.search-bar input {
+  width: 35vw;
+  padding: 5px;
+  margin: 0;
+  border: none;
+  font-size: 15px;
+  outline: none;
+}
+
+.search {
+  color: rgb(4, 65, 47);
+}
+
+.yaseen:hover {
+  background: rgb(4, 65, 47);
+  color: white;
+}
+
+.yaseen a {
+  background: white;
+  padding: 0 20px;
+  color: #333;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.yaseen a:hover {
+  color: rgb(2, 1, 1);
+}
+
+.container{
+  font-family: 'Scheherazade New', serif;
+}
+
+@media (max-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .yaseen {
+    font-weight: 100;
+  }
+  
+.search-bar {
+
+  
+  width:77vw;
+  height: 40px;
+margin-left:auto;
+margin-right:auto;
+
+}
+
+.search-bar input {
+width:60vw;
+}
+}
+
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>MOULID KITHAB</title>
+</head>
+<body>
+    <header>
+            <h1 class="hero-title">MOULID KITHAB</h1>
+    </header>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search Surah...">
+    </div>
+    <main class="grid-container">
+      <section class="section-box">
+        <a href="/moulid/MANQOOS.pdf" target="_blank">
+          <div class="section-content">
+            <h2 class="section-title">manqoos moulid</h2>
+          </div>
+        </a>
+      </section>
+      <section class="section-box">
+        <a href="/moulid/badr.pdf" target="_blank">
+          <div class="section-content">
+            <h2 class="section-title">badr moulid</h2>
+          </div>
+        </a>
+      </section>
+      <section class="section-box">
+        <a href="/moulid/SHARAFULANAM.pdf" target="_blank">
+          <div class="section-content">
+            <h2 class="section-title">SHARAFUL ANAM</h2>
+          </div>
+        </a>
+      </section>
+      <section class="section-box">
+        <a href="/moulid/kuthbiyyath.pdf" target="_blank">
+          <div class="section-content">
+            <h2 class="section-title">kuthbiyyath</h2>
+          </div>
+        </a>
+      </section>
+      <section class="section-box">
+        <a href="/moulid/thajul.pdf" target="_blank">
+          <div class="section-content">
+            <h2 class="section-title">thajul ulema moulid</h2>
+          </div>
+        </a>
+      </section>
+        <section class="section-box">
+            <a href="/moulid/ajmeer.pdf" target="_blank">
+              <div class="section-content">
+                <h2 class="section-title">ajmeer khaja moulid</h2>
+              </div>
+            </a>
+          </section>
+          <section class="section-box">
+            <a href="/moulid/CMVali.pdf" target="_blank">
+              <div class="section-content">
+                <h2 class="section-title">C M VALIYULLAH MOULID</h2>
+              </div>
+            </a>
+          </section>
+          <section class="section-box">
+            <a href="/moulid/JALALIA RATHIB.pdf" target="_blank">
+              <div class="section-content">
+                <h2 class="section-title">JALALIYA RATHIB</h2>
+              </div>
+            </a>
+          </section>
+          <section class="section-box">
+            <a href="/moulid/RIFAI MOULID.pdf" target="_blank">
+              <div class="section-content">
+                <h2 class="section-title">RIFAYI MOULID</h2>
+              </div>
+            </a>
+          </section>
+          <section class="section-box">
+            <a href="/moulid/NOORUL.pdf" target="_blank">
+              <div class="section-content">
+                <h2 class="section-title">NOORUL ULEMA MOULID</h2>
+              </div>
+            </a>
+          </section>
+      </main>
+      <script>
+        const searchBar = document.getElementById("search-input");
+  const placeholders = ["Search eg: manqoos moulid", "Search eg: badr moulid", "Search eg:noorul ulema moulid", "Search eg:rifayi moulid", "Search eg:jalaliya rathib"];
+  let i = 0;
+
+  setInterval(() => {
+    searchBar.setAttribute("placeholder", placeholders[i]);
+    i = (i + 1) % placeholders.length;
+  }, 2000);
+
+
+
+  
+  const searchInput = document.getElementById('search-input');
+  const sectionBoxes = document.getElementsByClassName('section-box');
+
+  function isSimilarMatch(query, sectionTitle) {
+    const regex = new RegExp(query, 'i');
+    return regex.test(sectionTitle);
+  }
+
+  searchInput.addEventListener('input', () => {
+    const searchQuery = searchInput.value.trim();
+
+    Array.from(sectionBoxes).forEach((section) => {
+      const sectionTitle = section.querySelector('.section-title').textContent;
+
+      if (isSimilarMatch(searchQuery, sectionTitle)) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
+    });
+  });
+
+      </script>
+      
+      
+      
+</body>
+</html>

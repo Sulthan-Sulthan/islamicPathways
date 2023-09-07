@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Font+Name" rel="stylesheet"> -->
+    <title>quran</title>
+    
+  </head>
+
+  <body>
+    <header>
+      <h1 class="hero-title">AL QURAAN KAREEM</h1>
+    </header>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search Surah...">
+    </div>
+    
+    <div id="surah-list">
+      <!-- This is where the matching surahs will be displayed -->
+    </div>
+    <ul id="surahList">
+
+    </ul>
+    
+    
+    <script>
+      const ulDom = document.getElementById("surahList");
+    
+      function initFunc() {
+        fetch("https://api.alquran.cloud/v1/surah")
+          .then(async (res) => {
+            const data = await res.json();
+            const surahs = data.data;
+            console.log(data.data);
+            surahs.forEach((sura) => {
+              const li = document.createElement('li');
+              li.setAttribute('class', 'item');
+              li.innerHTML = sura.englishName;
+              li.addEventListener('click', () => {
+                const pageUrl = `page${sura.number}.html`;
+                goToPage(pageUrl);
+              });
+              ulDom.appendChild(li);
+            });
+          });
+      }
+    
+      function goToPage(pageUrl) {
+        window.location.href = pageUrl;
+      }
+
+
+      const searchInput = document.getElementById('search-input');
+const surahList = document.getElementById('surahList');
+const surahItems = surahList.getElementsByClassName('item');
+
+searchInput.addEventListener('input', () => {
+  const searchQuery = searchInput.value.trim().toLowerCase();
+  
+  Array.from(surahItems).forEach((item) => {
+    const surahName = item.textContent.toLowerCase();
+    if (surahName.includes(searchQuery)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+});
+    
+      initFunc();
+    </script>
+    
+    
+    
+    <script src="quran.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+  const ulDom = document.getElementById("surahList");
+
+  function initFunc() {
+    fetch("https://api.alquran.cloud/v1/surah")
+      .then(async (res) => {
+        const data = await res.json();
+        const surahs = data.data;
+        console.log(data.data);
+        surahs.forEach((sura) => {
+          const li = document.createElement('li');
+          li.setAttribute('class', 'item');
+          li.innerHTML = sura.englishName;
+          li.addEventListener('click', () => {
+            const pageUrl = `page${sura.number}.html`;
+            goToPage(pageUrl);
+          });
+          ulDom.appendChild(li);
+        });
+      });
+  }
+
+  function goToPage(pageUrl) {
+    window.location.href = pageUrl;
+  }
+
+  initFunc();
+</script> -->
